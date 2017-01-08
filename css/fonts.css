@@ -1,0 +1,19 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url(../fonts/BebasNeue.otf);
+}
+
+@font-face {
+    font-family: BebasNeueThin;
+    src: url(../fonts/BebasNeueThin.otf);
+}
+
+@font-face {
+    font-family: BebasNeueBold;
+    src: url(../fonts/BebasNeueBold.otf);
+}
+
+@font-face {
+	font-family: RalewayBold;
+	src: url(../fonts/Raleway-Bold.ttf);
+}
