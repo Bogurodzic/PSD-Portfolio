@@ -1,3 +1,7 @@
+* {
+	text-decoration: none;
+}
+
 .button {
 	width: 215px;
 	height: 55px;
@@ -19,16 +23,25 @@
 
 /* DESCRIPTION */
 header {
-	height: 810px;
-	width: auto;
+	height: auto;
+	width: 100%;
 	background: 
-		url(../img/about-background.jpg)
+		url(../img/about-background1.jpg)
 		-900px center
 		no-repeat;
 }
 
+header .description-responsive {
+	width: 100%;
+	max-width: 1200px;
+	height: 810px;
+	margin: 0 auto;
+}
+
 header .fa-bars {
 	float: right;
+	color: #5a5aff;
+	padding: 5px 5px 0 0;
 }
 
 header .description-text {
@@ -39,17 +52,20 @@ header .description-text {
 
 header .description-text p:nth-of-type(1){
 	font-family: "BebasNeueThin";
+	color: #333333;
 	font-size: 30px;
 }
 
 header .description-text p:nth-of-type(2){
 	font-family: "BebasNeueBold";
 	font-size: 55px;
+	color: #5a5aff;
 	padding: 30px 0;
 }
 
 header .description-text p:nth-of-type(3){
 	font-family: "BebasNeue";
+	color: #333333;
 	font-size: 30px;
 }
 
@@ -58,3 +74,40 @@ header .description-button {
 	margin: 0 auto;
 }
 
+@media screen and (min-width: 720px) {
+
+	header {
+		height: 810px;
+		width: auto;
+		background: 
+			url(../img/about-background1.jpg)
+			center center
+			no-repeat;
+	}
+
+	header .fa-bars {
+		font-size: 45px;
+	}
+
+	header .description-text {
+		padding: 100px 0 125px 15px;
+		width: 260px;
+		margin: 0;
+	}
+
+	header .description-button {
+		margin: 0;
+		margin: 0 0 0 15px;
+	}
+
+}
+
+@media screen and (min-width: 1240px) {
+
+	header .fa-bars {
+		clear: both;
+		position: absolute;
+		left: 90%;
+	}
+
+}
