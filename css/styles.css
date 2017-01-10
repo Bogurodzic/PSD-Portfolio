@@ -611,4 +611,60 @@ section.skills .skills-responsive .works-list .work img {
 		position: absolute;
 	}
 
+	section.skills .skills-responsive {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+	}
+
+	section.skills .skills-responsive .menu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+	}
+
+	section.skills .skills-responsive .menu .skills-list {
+		position: relative;
+		width: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+
+	}
+
+	section.skills .skills-responsive .menu .skills-list li p {
+		display: inline-block;
+	}
+
+	section.skills .skills-responsive .menu .skills-list li {
+
+		clear: both;
+		padding: 17.5px 0px 17.5px 125px;
+		font-size: 16px;
+		font-family: "RalewayBold";
+		opacity: 0.7;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+		color: #A4A4A4;
+	}
+
 }

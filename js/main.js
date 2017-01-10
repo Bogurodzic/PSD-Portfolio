@@ -25,7 +25,9 @@ $(document).ready(function(){
 	
 
 	var windowWidth = $( window ).outerWidth(),
-		todo = $(".filter-list").children(),
+		photos = $(".filter-list").children(),
+		skills = $(".skills-list").children(),
+		skillIndex,
 		photoIndex;
 
 	function hrWidth(){
@@ -51,20 +53,30 @@ $(document).ready(function(){
 		});
 	}
 
-	function lookForIt(lookingIn, lookingFor){
-
-		jQuery.each($(lookingIn), function(i, value){
-			var photoValue = $(value).attr("data-photo");
-			if(lookingFor == photoValue){
-				photoIndex = i;
-				if (windowWidth >= 740) {
-					$(value).css("display", "flex");
-				} else {
-					$(value).css("display", "block");
-					$(value).css("opacity", 1);
+	function lookForIt(lookingIn, lookingFor, data){
+		if(data === "data-photo"){
+			jQuery.each($(lookingIn), function(i, value){
+				var photoValue = $(value).attr(data);
+				if(lookingFor == photoValue){
+					photoIndex = i;
+					if (windowWidth >= 740) {
+						$(value).css("display", "flex");
+					} else {
+						$(value).css("display", "block");
+						$(value).css("opacity", 1);
+					}
 				}
-			}
-		});		
+			});				
+		} else {
+			jQuery.each($(lookingIn), function(i, value){
+				var photoValue = $(value).attr(data);
+				if(lookingFor == photoValue){
+					skillIndex = i;
+					$(value).css("display", "block");
+				}
+			});				
+		}
+	
 	}
 
 	function hideAll(toHide){
@@ -73,6 +85,7 @@ $(document).ready(function(){
 
 	function start(){
 		hideAll(".photos");
+		hideAll(".work");
 		if (lookForActive()===true){
 			$(".filter-list li p").eq(photoIndex).addClass("active-photo");
 			if (windowWidth >= 1240) {
@@ -105,7 +118,7 @@ $(document).ready(function(){
 		}
 	}
 
-	function highliteList(value){
+	function highliteListPhotos(value){
 			if (windowWidth >= 1240) {
 				var parahraph = $(".filter-list li p:contains('"+ value+"')");
 				$(parahraph).addClass("active-photo");
@@ -124,22 +137,35 @@ $(document).ready(function(){
 		hrWidth();
 		hrHide();
 		hideAll(".photos");
+		hideAll(".work");
 		windowWidth = $( window ).outerWidth();
 		start();
 	});
 
-	[].forEach.call(todo, function(value){
+	[].forEach.call(photos, function(value){
 
 		var filterValue = $(value).text();
 		
 		value.addEventListener("click", function(){
 			hrHide();
-			highliteList(filterValue);
+			highliteListPhotos(filterValue);
 			hideAll(".photos");
 			$.when( hideAll(".photos", filterValue) ).done( function() {
-			    lookForIt(".photos", filterValue);
+			    lookForIt(".photos", filterValue, "data-photo");
 			});
 
+		});
+	});
+
+	[].forEach.call(skills, function(value){
+
+		var skillValue = $(value).text();
+
+		value.addEventListener("click", function(){
+			hideAll(".work");
+			$.when( hideAll(".work", skillValue) ).done( function() {
+			    lookForIt(".work", skillValue, "data-work");
+			});
 		});
 	});
 
