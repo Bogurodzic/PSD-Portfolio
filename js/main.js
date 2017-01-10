@@ -175,6 +175,7 @@ $(document).ready(function(){
 		hideAll(".work");
 		windowWidth = $( window ).outerWidth();
 		start();
+		resizeContact();
 	});
 
 	[].forEach.call(photos, function(value){
@@ -206,6 +207,13 @@ $(document).ready(function(){
 		});
 	});
 
+resizeContact();
+
+function resizeContact(){
+	var h2ContactWidth = $(".contact h2").width();
+	var hrContactWidth = $(window).width();
+	$(".contact hr").width(hrContactWidth/2 - h2ContactWidth/2);	
+}
 
 
 });

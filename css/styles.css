@@ -327,6 +327,7 @@ section.photography .photography-responsive .menu ul li:hover {
 
 section.skills {
 	width: 100%;
+	padding-bottom: 50px;
 }
 
 section.skills .skills-responsive {
@@ -377,18 +378,31 @@ section.skills .skills-responsive .works-list .work img {
 	margin: 0 auto;
 }
 
-.work-gradient {
-	position: absolute;
-	left: 0;
-	top: 0;
-	  margin-left: auto; 
-  margin-right: auto; 
-		z-index: 5;
+/*** CONTACT SECTION ****/
+
+section.contact {
+	width: 100%;
+	height: 680px;
+	background: 
+		url(../img/contact-bg.jpg)
+		left center;
 }
 
-.work-gradient1 {
-	background: rgba(55, 55, 155, 0.4);
+section.contact .contact-responsive {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
 }
+
+section.contact .title-contact {
+	padding-top: 100px;
+}
+
+section.contact .title-contact h2 {
+	background: transparent;
+}
+
+
 
 /**** MEDIA QUERIES *****/
 
@@ -636,6 +650,10 @@ section.skills .skills-responsive .works-list .work img {
 		color: black;
 		display: none;
 		position: absolute;
+	}
+
+	section.skills {
+		padding-bottom: 0px;
 	}
 
 	section.skills .skills-responsive {
