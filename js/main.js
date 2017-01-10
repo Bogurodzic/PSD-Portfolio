@@ -30,20 +30,20 @@ $(document).ready(function(){
 		skillIndex,
 		photoIndex;
 
-	function hrWidth(){
-		$(".filter-list li p").each(function(i, value){
+	function hrWidth(whichHr){
+			$(whichHr).each(function(i, value){
 
-			var hr = $(value).next();
-			var pWidth = $(value).width();
-			var hrWidth = 270 - pWidth;
+				var hr = $(value).next();
+				var pWidth = $(value).width();
+				var hrWidth = 275 - pWidth;
 
-			$(hr).css("width", hrWidth);
+				$(hr).css("width", hrWidth);
 
-		});
+			});			
 	}
 
-	function hrHide(){
-		$(".filter-list li p").each(function(i, value){
+	function hrHide(toHide){
+		$(toHide).each(function(i, value){
 
 			$(value).css("text-transform", "initial").removeClass("active-photo");
 			var hr = $(value).next();
@@ -72,7 +72,7 @@ $(document).ready(function(){
 				var photoValue = $(value).attr(data);
 				if(lookingFor == photoValue){
 					skillIndex = i;
-					$(value).css("display", "block");
+					$(value).css("display", "flex");
 				}
 			});				
 		}
@@ -86,7 +86,7 @@ $(document).ready(function(){
 	function start(){
 		hideAll(".photos");
 		hideAll(".work");
-		if (lookForActive()===true){
+		if (lookForActive(photoIndex)===true){
 			$(".filter-list li p").eq(photoIndex).addClass("active-photo");
 			if (windowWidth >= 1240) {
 				$(".filter-list li hr").eq(photoIndex).css("display", "inline-block");			
@@ -96,7 +96,7 @@ $(document).ready(function(){
 			} else {
 				$(".photos").first(photoIndex).css("display", "block");
 			}			
-		} else {
+		} else if (lookForActive(photoIndex) === false) {
 			$(".filter-list li p").first().addClass("active-photo");
 			if (windowWidth >= 1240) {
 				$(".filter-list li hr").first().css("display", "inline-block");			
@@ -107,11 +107,31 @@ $(document).ready(function(){
 				$(".photos").first().css("display", "block");
 			}			
 		}
-
+		if (lookForActive(skillIndex)===true){
+			$(".skills-list li p").eq(skillIndex).addClass("active-photo");
+			if (windowWidth >= 1240) {
+				$(".skills-list li hr").eq(skillIndex).css("display", "inline-block");			
+			}
+			if (windowWidth >= 740){
+				$(".work").eq(skillIndex).css("display", "flex");
+			} else {
+				$(".work").first(skillIndex).css("display", "block");
+			}			
+		} else if (lookForActive(skillIndex) === false) {
+			$(".skills-list li p").first().addClass("active-photo");
+			if (windowWidth >= 1240) {
+				$(".skills-list li hr").first().css("display", "inline-block");			
+			}
+			if (windowWidth >= 740){
+				$(".work").first().css("display", "flex");
+			} else {
+				$(".work").first().css("display", "block");
+			}			
+		}
 	}
 
-	function lookForActive(){
-		if (photoIndex){
+	function lookForActive(indexType){
+		if (indexType){
 			return true;
 		} else {
 			return false;
@@ -130,12 +150,27 @@ $(document).ready(function(){
 			}
 	}
 
-	hrWidth();
+	function highliteListSkills(value){
+			if (windowWidth >= 1240) {
+				var parahraph = $(".skills-list li p:contains('"+ value+"')");
+				$(parahraph).addClass("active-photo");
+				var hr = $(parahraph).next();
+				$(hr).css("display", "inline-block");				
+			} else {
+				var parahraph = $(".skills-list li p:contains('"+ value+"')");
+				$(parahraph).toggleClass("active-photo");
+			}
+	}	
+
+	hrWidth(".filter-list li p");
+	hrWidth(".skills-list li p");
 	start();
 
 	$( window ).resize(function(){
-		hrWidth();
-		hrHide();
+		hrWidth(".filter-list li p");
+		hrWidth(".skills-list li p");
+		hrHide(".filter-list li p");
+		hrHide(".skills-list li p");
 		hideAll(".photos");
 		hideAll(".work");
 		windowWidth = $( window ).outerWidth();
@@ -147,7 +182,7 @@ $(document).ready(function(){
 		var filterValue = $(value).text();
 		
 		value.addEventListener("click", function(){
-			hrHide();
+			hrHide(".filter-list li p");
 			highliteListPhotos(filterValue);
 			hideAll(".photos");
 			$.when( hideAll(".photos", filterValue) ).done( function() {
@@ -162,12 +197,15 @@ $(document).ready(function(){
 		var skillValue = $(value).text();
 
 		value.addEventListener("click", function(){
+			hrHide(".skills-list li p");
+			highliteListSkills(skillValue);
 			hideAll(".work");
 			$.when( hideAll(".work", skillValue) ).done( function() {
 			    lookForIt(".work", skillValue, "data-work");
 			});
 		});
 	});
+
 
 
 });

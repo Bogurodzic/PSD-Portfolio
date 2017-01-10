@@ -335,7 +335,7 @@ section.skills .skills-responsive {
 	margin: 0 auto;
 }
 
-section.skills .skills-responsive .menu > p {
+section.skills .menu > p {
 	font-family: "BebasNeueBold";
 	font-size: 50px;
 	text-align: center;
@@ -366,14 +366,29 @@ section.skills .skills-responsive .menu .skills-list li:hover {
 }
 
 section.skills .skills-responsive .works-list .work {
+	position: relative;
 	width: 90%;
 	margin: 0 auto;
 }
 
 section.skills .skills-responsive .works-list .work img {
 	width: 100%;
+	max-width: 754px;
+	margin: 0 auto;
 }
 
+.work-gradient {
+	position: absolute;
+	left: 0;
+	top: 0;
+	  margin-left: auto; 
+  margin-right: auto; 
+		z-index: 5;
+}
+
+.work-gradient1 {
+	background: rgba(55, 55, 155, 0.4);
+}
 
 /**** MEDIA QUERIES *****/
 
@@ -504,8 +519,9 @@ section.skills .skills-responsive .works-list .work img {
 		display: flex;
 		display: none;
 		margin: 0 auto;
-		width: 720px;
 	}
+
+
 
 	section.photography .photography-responsive .photos .column {
 		box-sizing: content-box;
@@ -522,6 +538,7 @@ section.skills .skills-responsive .works-list .work img {
 
 
 }
+
 
 @media screen and (min-width: 1240px) {
 
@@ -543,6 +560,16 @@ section.skills .skills-responsive .works-list .work img {
 
 	section.photography .photography-responsive .photos {
 		width: 75%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+	}
+
+	section.photography .photography-responsive .photos img {
+		width: 270px;
 	}
 
 	section.photography .photography-responsive .menu {
@@ -587,7 +614,7 @@ section.skills .skills-responsive .works-list .work img {
 	section.photography .photography-responsive .menu ul li {
 
 		clear: both;
-		padding: 17.5px 0px 17.5px 125px;
+		padding: 17.5px 0px 17.5px 25px;
 		font-size: 16px;
 		font-family: "RalewayBold";
 		opacity: 0.7;
@@ -612,30 +639,24 @@ section.skills .skills-responsive .works-list .work img {
 	}
 
 	section.skills .skills-responsive {
+		height: 720px;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
-	}
-
-	section.skills .skills-responsive .menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+
+	section.skills .skills-responsive .menu {
+		width: 25%;
 	}
 
 	section.skills .skills-responsive .menu .skills-list {
-		position: relative;
-		width: 100%;
+		clear: both;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -643,13 +664,10 @@ section.skills .skills-responsive .works-list .work img {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		-webkit-box-pack: start;
-		    -ms-flex-pack: start;
-		        justify-content: flex-start;
-		-webkit-box-align: start;
-		    -ms-flex-align: start;
-		        align-items: flex-start;
+	}
 
+	section.skills .menu > p {
+		margin-left: -15px;
 	}
 
 	section.skills .skills-responsive .menu .skills-list li p {
@@ -659,12 +677,26 @@ section.skills .skills-responsive .works-list .work img {
 	section.skills .skills-responsive .menu .skills-list li {
 
 		clear: both;
-		padding: 17.5px 0px 17.5px 125px;
+		padding: 17.5px 0px 17.5px 35px;
 		font-size: 16px;
 		font-family: "RalewayBold";
 		opacity: 0.7;
 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
 		color: #A4A4A4;
+	}
+
+	section.skills .skills-responsive .works-list {
+		width: 75%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+	}
+
+	section.skills .skills-responsive .works-list .work {
+		width: 100%;
 	}
 
 }
