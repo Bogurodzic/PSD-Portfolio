@@ -400,6 +400,65 @@ section.contact .title-contact {
 
 section.contact .title-contact h2 {
 	background: transparent;
+	font-size: 45px;
+}
+
+section.contact .contact-responsive {
+	padding-top: 50px;
+}
+
+section.contact .contact-responsive p{
+	font-size: "RalewayBold";
+	text-align: center;
+	font-size: 20px;
+	margin: 25px 0;
+
+}
+
+section.contact .contact-responsive .contact-form {
+	width:  90%;
+	max-width: 585px;
+	margin: 0 auto;
+}
+
+section.contact .contact-responsive .contact-form form {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+section.contact .contact-responsive .contact-form input:nth-of-type(1),
+section.contact .contact-responsive .contact-form input:nth-of-type(2) {
+	width: 60%;
+	background: transparent;
+	height: 45px;
+	border: 1px solid black;
+	margin: 0 0 15px 0;
+	font-family: "RalewayBold";
+	font-size: 16px;
+}
+
+section.contact .contact-responsive .contact-form textarea {
+	width: 80%;
+	height: 130px;
+	background: transparent;
+	border: 1px solid black;
+	font-family: "RalewayBold";
+	font-size: 16px;
+}
+
+.contact-button {
+	width: 100%;
+	background: #333333;
+	border: none;
+	border-radius: 0px;
+	margin-top: 30px;
+	color: white;
 }
 
 
@@ -436,6 +495,10 @@ section.contact .title-contact h2 {
 @media screen and (min-width: 560px) {
 	.title-photography h2 {
 		font-size: 36px;
+	}
+
+	section.contact .title-contact h2 {
+		font-size: 50px;
 	}
 }
 
@@ -550,7 +613,26 @@ section.contact .title-contact h2 {
 		font-size: 50px;
 	}
 
+	section.contact .contact-responsive > p {
+		margin-bottom: 85px;
+	}
 
+	section.contact .contact-responsive .contact-form form {
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+
+	section.contact .contact-responsive .contact-form input:nth-of-type(1),
+	section.contact .contact-responsive .contact-form input:nth-of-type(2) {
+		width: 48%;
+		padding-left: 30px;
+	}
+
+	section.contact .contact-responsive .contact-form textarea {
+		padding: 20px 0 0 30px;
+		width: 100%;
+	}
 }
 
 
