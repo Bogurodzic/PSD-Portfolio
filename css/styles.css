@@ -268,7 +268,6 @@ section.photography .photography-responsive {
 }
 
 section.photography .photography-responsive .column {
-	width: 
 	max-width: 270px;
 	margin: 0 auto;
 }
@@ -408,7 +407,7 @@ section.contact .contact-responsive {
 }
 
 section.contact .contact-responsive p{
-	font-size: "RalewayBold";
+	font-family: "RalewayBold";
 	text-align: center;
 	font-size: 20px;
 	margin: 25px 0;
