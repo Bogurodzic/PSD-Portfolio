@@ -60,10 +60,23 @@ $(document).ready(function(){
 				if(lookingFor == photoValue){
 					photoIndex = i;
 					if (windowWidth >= 740) {
-						$(value).css("display", "flex");
+						$(value).css({
+							width: "0%",
+							opacity: 0.5,
+							display: "flex"
+						}).animate({
+							width: "100%",
+							opacity: 1,
+							display: "block"
+						});
 					} else {
-						$(value).css("display", "block");
-						$(value).css("opacity", 1);
+						$(value).css({
+							opacity: 0.5,
+							display: "block"
+						}).animate({
+							opacity: 1,
+							display: "block"
+						});
 					}
 				}
 			});				
@@ -92,9 +105,15 @@ $(document).ready(function(){
 				$(".filter-list li hr").eq(photoIndex).css("display", "inline-block");			
 			}
 			if (windowWidth >= 740){
-				$(".photos").eq(photoIndex).css("display", "flex");
+				$(".photos").eq(photoIndex).css({
+							opacity: 1,
+							display: "flex"
+						});
 			} else {
-				$(".photos").first(photoIndex).css("display", "block");
+				$(".photos").first(photoIndex).css({
+							opacity: 1,
+							display: "block"
+						});
 			}			
 		} else if (lookForActive(photoIndex) === false) {
 			$(".filter-list li p").first().addClass("active-photo");
@@ -102,9 +121,15 @@ $(document).ready(function(){
 				$(".filter-list li hr").first().css("display", "inline-block");			
 			}
 			if (windowWidth >= 740){
-				$(".photos").first().css("display", "flex");
+				$(".photos").first().css({
+							opacity: 1,
+							display: "flex"
+						});
 			} else {
-				$(".photos").first().css("display", "block");
+				$(".photos").first().css({
+							opacity: 1,
+							display: "block"
+						});
 			}			
 		}
 		if (lookForActive(skillIndex)===true){
