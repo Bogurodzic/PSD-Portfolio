@@ -62,6 +62,10 @@ header .fa-bars {
 	padding: 5px 5px 0 0;
 }
 
+header .fa-bars:hover {
+	cursor: pointer;
+}
+
 header .description-text {
 	padding: 100px 0 125px 0;
 	width: 260px;
@@ -744,8 +748,9 @@ footer {
 	.hr-list {
 		margin-left: 10px;
 		width: 50%;
-		border: 0.5px solid black;
-		color: black;
+		border: 0.5px solid green;
+		color: green;
+		background: green;
 		display: none;
 		position: absolute;
 	}
