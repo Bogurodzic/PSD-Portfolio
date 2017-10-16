@@ -43,7 +43,7 @@
 header {
 	height: auto;
 	width: 100%;
-	background: 
+	background:
 		url(../img/about-background1.jpg)
 		-900px center
 		no-repeat;
@@ -243,7 +243,7 @@ section.about .about-responsive .about-text .about-button:hover {
 	background: rgba(25, 25, 112, 0.2);
 }
 
-/*** PHOTOGRAPHY ***/ 
+/*** PHOTOGRAPHY ***/
 
 section.photography {
 	width: 100%;
@@ -328,24 +328,24 @@ section.photography .photography-responsive .menu ul li:hover {
 
 /**** SKILLS SECTION ****/
 
-section.skills {
+.skills {
 	width: 100%;
 	padding-bottom: 50px;
 }
 
-section.skills .skills-responsive {
+.skills .skills-responsive {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
 }
 
-section.skills .menu > p {
+.skills .menu > p {
 	font-family: "BebasNeueBold";
 	font-size: 50px;
 	text-align: center;
 }
 
-section.skills .skills-responsive .menu .skills-list {
+.skills .skills-responsive .menu .skills-list {
 	width: 100%;
 	display: inline-block;
 	list-style-type: none;
@@ -355,27 +355,27 @@ section.skills .skills-responsive .menu .skills-list {
 	padding: 30px 0;
 }
 
-section.skills .skills-responsive .menu .skills-list li {
+.skills .skills-responsive .menu .skills-list li {
 	float: left;
 	padding: 5px 15px;
 	font-size: 11px;
 	font-family: "RalewayBold";
 	opacity: 0.7;
-	color: grey;	
+	color: grey;
 }
 
-section.skills .skills-responsive .menu .skills-list li:hover {
+.skills .skills-responsive .menu .skills-list li:hover {
 	opacity: 1;
 	cursor: pointer;
 }
 
-section.skills .skills-responsive .works-list .work {
+.skills .skills-responsive .works-list .work {
 	position: relative;
 	width: 90%;
 	margin: 0 auto;
 }
 
-section.skills .skills-responsive .works-list .work img {
+.skills .skills-responsive .works-list .work img {
 	width: 100%;
 	max-width: 754px;
 	margin: 0 auto;
@@ -386,7 +386,7 @@ section.skills .skills-responsive .works-list .work img {
 section.contact {
 	width: 100%;
 	height: 680px;
-	background: 
+	background:
 		url(../img/contact-bg.jpg)
 		left center;
 }
@@ -528,7 +528,7 @@ footer {
 	header {
 		height: 810px;
 		width: auto;
-		background: 
+		background:
 			url(../img/about-background1.jpg)
 			center center
 			no-repeat;
@@ -755,11 +755,11 @@ footer {
 		position: absolute;
 	}
 
-	section.skills {
+	.skills {
 		padding-bottom: 0px;
 	}
 
-	section.skills .skills-responsive {
+	.skills .skills-responsive {
 		height: 720px;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -772,11 +772,11 @@ footer {
 		        align-items: center;
 	}
 
-	section.skills .skills-responsive .menu {
+	.skills .skills-responsive .menu {
 		width: 25%;
 	}
 
-	section.skills .skills-responsive .menu .skills-list {
+	.skills .skills-responsive .menu .skills-list {
 		clear: both;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -787,15 +787,15 @@ footer {
 		        flex-direction: column;
 	}
 
-	section.skills .menu > p {
+	.skills .menu > p {
 		margin-left: -15px;
 	}
 
-	section.skills .skills-responsive .menu .skills-list li p {
+	.skills .skills-responsive .menu .skills-list li p {
 		display: inline-block;
 	}
 
-	section.skills .skills-responsive .menu .skills-list li {
+	.skills .skills-responsive .menu .skills-list li {
 
 		clear: both;
 		padding: 17.5px 0px 17.5px 35px;
@@ -806,7 +806,7 @@ footer {
 		color: #A4A4A4;
 	}
 
-	section.skills .skills-responsive .works-list {
+	.skills .skills-responsive .works-list {
 		width: 75%;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -816,7 +816,7 @@ footer {
 		        justify-content: center;
 	}
 
-	section.skills .skills-responsive .works-list .work {
+	.skills .skills-responsive .works-list .work {
 		width: 100%;
 	}
 
